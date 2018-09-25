@@ -1,0 +1,20 @@
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Pattaya" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Sacramento" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bilbo+Swash+Caps" rel="stylesheet">
+</head>
+
+<p id="notice"><%= notice %></p>
+
+<div>
+  <h1 class="profile-top">NAME:&nbsp;&nbsp;&nbsp;<%= @user.name %></h1>
+  <h1 class="profile-top">ID:&nbsp;&nbsp;&nbsp;<%= @user.email %></h1>
+</div>
+
+
+<p>お気に入り</p>
+
+<p><%= link_to 'お気に入り一覧へ', favorites_path %></p>
+<!--
+<#%= link_to 'Back', root_path %>
+-->

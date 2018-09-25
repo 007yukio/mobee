@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Video003</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Pattaya" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Sacramento" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bilbo+Swash+Caps" rel="stylesheet">
+  </head>
+  
+<header>
+  <ul>
+  <% if logged_in? %>
+      <li><%= link_to "Top", root_path %></li>
+      <li><%= link_to "My page", user_path(current_user.id) %></li>
+      <li><%= link_to "Show movei", movies_path %></li>
+      <li><%= link_to "Logout", session_path(current_user.id), method: :delete %></li>
+    <% else %>
+      <li><%= link_to "Top", root_path %></li>
+      <li><%= link_to "Sign up", new_user_path %></li>
+      <li><%= link_to "Login", new_session_path %></li>
+    <% end %>
+  </ul>
+</header>
+
+
+  <body>
+    <% flash.each do |key, value| %>
+      <%= content_tag(:div, value, class: "#{key}") %>
+    <% end %>
+    
+    <%= yield %>
+  </body>
+<!--
+  <footer>
+  <p>© 1566-2150 Copyright Tequila Sunrise Corp.</p>
+  </footer>
+-->
+
+</html>

@@ -1,0 +1,13 @@
+<h1>お気に入りのページ</h1>
+<p>Find me in app/views/favorites/index.html.erb</p>
+
+        <% if @favorite_movies.present? %>
+            <% @favorite_movies.each do |movie| %>
+            
+              <div><!--ここ不明なぜ再生されない？-->
+                <%= video_tag(movie.video, :controls => false,size:(35*15) )%>
+                <%= movie.title %>
+              </div>
+              
+            <% end %>
+        <% end %>
