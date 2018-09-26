@@ -1,13 +1,19 @@
+<div class="movie-show">
 <h1>お気に入りのページ</h1>
-<p>Find me in app/views/favorites/index.html.erb</p>
 
-        <% if @favorite_movies.present? %>
-            <% @favorite_movies.each do |movie| %>
-            
-              <div><!--ここ不明なぜ再生されない？-->
-                <%= video_tag(movie.video, :controls => false,size:(35*15) )%>
-                <%= movie.title %>
-              </div>
-              
-            <% end %>
-        <% end %>
+<% if @favorite_movies.present? %>
+  <% @favorite_movies.each do |movie| %>
+    <h3><%= video_tag(movie.video, :controls => false,size:(35*15) )%></h3>
+       
+    <div>
+      <h1>
+        Tital:　<%= movie.title %>
+      </h1>
+      <br>
+      <div>
+        <%= link_to '/Show/',movie_path(movie.id) %>
+      </div>
+    </div>
+  <% end %>
+<% end %>
+</div>

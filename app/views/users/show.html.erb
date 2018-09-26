@@ -10,11 +10,12 @@
   <h1 class="profile-top">NAME:&nbsp;&nbsp;&nbsp;<%= @user.name %></h1>
   <h1 class="profile-top">ID:&nbsp;&nbsp;&nbsp;<%= @user.email %></h1>
 </div>
+<br>
+<div class="profile-top">
+  <p class="profile-okini">お気に入り</p>
+  <p class="profile-top"><%= link_to 'お気に入り一覧へ', favorites_path %></p>
+</div>
 
-
-<p>お気に入り</p>
-
-<p><%= link_to 'お気に入り一覧へ', favorites_path %></p>
 <!--
 <#%= link_to 'Back', root_path %>
 -->

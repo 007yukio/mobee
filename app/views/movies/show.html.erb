@@ -1,43 +1,18 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @movie.title %>
-</p>
-
-<div>
-<strong>Video:</strong>
-<br>
-<p class="movie-show"><%= video_tag(@movie.video, :controls => true, :loop => true) %></p>
-  
-  <!--
-  動画サイズ調整処理入り
-  <#%= video_tag(@movie.video, :controls => true, size: (35*10)) %>
-  -->
+<div class="movie-show">
 
   <% unless @movie.user == current_user.id %>
     <% if @favorite.present? %>
       <%= link_to 'お気に入り解除する', favorite_path(id: @favorite.id), method: :delete, class: 'btn btn-danger' %>
     <% else %>
       <%= link_to 'お気に入りする', favorites_path(movie_id: @movie.id), method: :post, class: 'btn btn-primary' %>
+      <br>
+      <h3>Title: <%= @movie.title %></h3>
     <% end %>
   <% end %>
-
-<br>
-
-<div>
-  <strong>コメント</strong>
-  <p>コメントエリア</p>
-  
-
-  
   <br>
-  
-  <%= link_to 'コメント投稿', new_comment_path %>
-  
+  <!--<#%= link_to 'Back', movies_path %>-->
 </div>
+<h1 class="movie-show"><%= video_tag(@movie.video, :controls => true, :loop => true, size: (55*10)) %></h1>
 
-<br>
-
-<%= link_to 'Edit', edit_movie_path(@movie) %> |
-<%= link_to 'Back', movies_path %>
