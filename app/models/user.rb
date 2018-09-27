@@ -13,7 +13,6 @@ class User < ApplicationRecord
   has_many :movies
   has_many :favorites, dependent: :destroy  
   has_many :favorite_movies, through: :favorites, source: :movie
-  
 end
 
 

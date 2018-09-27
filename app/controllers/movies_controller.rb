@@ -34,7 +34,6 @@ class MoviesController < ApplicationController
   def create
     @movie = Movie.new(movie_params)
     @movie.user_id = current_user.id
-    
     if @movie.save
       #ContactMailer.contact_mail(@movie).deliver
       redirect_to movies_path, notice: "完了！！！！！！！"
@@ -83,5 +82,4 @@ class MoviesController < ApplicationController
       render new_session_path
     end
   end
-
 end

@@ -1,19 +1,15 @@
-<div class="movie-show">
+<div class="movie-show-favorite">
 <h1>お気に入りのページ</h1>
-
-<% if @favorite_movies.present? %>
-  <% @favorite_movies.each do |movie| %>
-    <h3><%= video_tag(movie.video, :controls => false,size:(35*15) )%></h3>
-       
-    <div>
-      <h1>
-        Tital:　<%= movie.title %>
-      </h1>
-      <br>
+  <% if @favorite_movies.present? %>
+    <% @favorite_movies.each do |movie| %>
+      <h3><%= video_tag(movie.video, :controls => false,size:(35*15) )%></h3>
       <div>
-        <%= link_to '/Show/',movie_path(movie.id) %>
+        <p class="b-keep">Tital:　<%= movie.title %></p>
+      <br>
+        <div class="movie-favorite-bot">
+          <%= link_to '/Show/',movie_path(movie.id) %>
+        </div>
       </div>
-    </div>
+    <% end %>
   <% end %>
-<% end %>
 </div>

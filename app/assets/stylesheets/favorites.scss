@@ -1,7 +1,20 @@
-.movie-show {
+.movie-show-favorite {
     margin-top:50PX;
     text-align: center;
     color: #f0ffff; /* 文字色 */
-    font-size: 30px;
+    font-size: 20px;
     font-family: "Pattaya";
+}
+
+.movie-favorite-bot {
+    margin-top:50PX;
+    text-align: center;
+    color: #f0ffff; /* 文字色 */
+    font-size: 25px;
+    font-family: "Pattaya";
+}
+
+.b-keep{
+  word-break: keep-all;
+  font-size: 25px;
 }

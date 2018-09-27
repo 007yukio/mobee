@@ -7,7 +7,6 @@
   <% if movie.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(movie.errors.count, "error") %> prohibited this movie from being saved:</h2>
-
       <ul>
       <% movie.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -15,22 +14,20 @@
       </ul>
     </div>
   <% end %>
-  
-<div class="movie-show">
-  <div class="field">
-    <p class="movie-show"><%= form.label :title %></p>
-    <p><%= form.text_field :title, id: :movie_title %></p>
-  </div>
-<br>
-  <div class="field">
-    <%= form.label :video %>
-    <br>
-    <p><%= form.file_field :video, id: :movie_video, :accept => 'video/*' %></p>
-  </div>
-
+  <p class="movei-sain">※投稿できる動画の種類はこちらです→jpg/jpeg/gif/png/mp4</p>
   <div class="movie-show">
-    <%= form.submit %>
-  </div>
-<div>
-
+    <div class="field">
+      <p class="movie-show"><%= form.label :title %></p>
+      <p><%= form.text_field :title, id: :movie_title %></p>
+    </div>
+    <br>
+    <div class="field">
+      <%= form.label :video %>
+      <br>
+      <h1><%= form.file_field :video, id: :movie_video, :accept => 'video/*' %></h1>
+    </div>
+    <div class="movie-show">
+      <%= form.submit %>
+    </div>
+  <div>
 <% end %>

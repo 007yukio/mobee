@@ -1,28 +1,26 @@
 <div class="movie-show">
-<h1 style="font-size:100px;color:#f00;">Movies</h1>
-<br>
-<div>
-  <!--<p id="notice"><#%= notice %></p>-->
-  <h1><%= link_to 'UP to Movie', new_movie_path %></h1>
-</div>
-
-<% @movies.each do |movie| %>
-  <h3><%= video_tag(movie.video, :controls => false,size:(35*15) )%></h3>
-      
-  <div class="movie-bottom">
-    <h1>
-        Title:　<%= movie.title %>
-    </h1>
-    <br>
-    <div>
-      <%= link_to ' Show ',movie_path(movie.id) %>
-      
-      <%#一覧表示から見えなくする条件分岐 %>
-      <% if movie.user_id == current_user.id %>
-        <%= link_to ' /Edit/ ', edit_movie_path(movie.id) %>
-        <%= link_to ' /Destroy/ ', movie_path(movie.id), method: :delete, data: { confirm: 'Are you sure?' } %>
-      <% end %>
-    </div>
+  <h1 style="font-size:100px;color:#f00;">Movies</h1>
+  <br>
+  <div>
+    <!--<p id="notice"><#%= notice %></p>-->
+    <h1><%= link_to 'UP to Movie', new_movie_path %></h1>
   </div>
-<% end %>
+
+  <% @movies.each do |movie| %>
+  <h3><%= video_tag(movie.video, :controls => false,size:(35*15) )%></h3>
+    <div class="movie-bottom">
+      <p class="movie-show-taital">
+        Title:　<%= movie.title %>
+      </p>
+      <br>
+      <div>
+        <%= link_to ' Show ',movie_path(movie.id) %>
+        <%#一覧表示から見えなくする条件分岐 %>
+        <% if movie.user_id == current_user.id %>
+          <%= link_to ' /Edit/ ', edit_movie_path(movie.id) %>
+          <%= link_to ' /Destroy/ ', movie_path(movie.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
 </div>

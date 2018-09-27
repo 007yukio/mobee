@@ -1,12 +1,8 @@
 class FavoritesController < ApplicationController
   def index
     @user = User.find(session[:user_id])
-    
     @favorite_movies = @user.favorite_movies
-    
-    
     #@favorite = current_user.favorites.find_by(movie_id: @movie.id)
-    
   end
   
   def create
@@ -20,7 +16,5 @@ class FavoritesController < ApplicationController
   end
   
   def show
-
   end
-
 end
