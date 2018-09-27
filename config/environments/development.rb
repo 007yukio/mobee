@@ -54,6 +54,6 @@ Rails.application.configure do
   
   #config.action_mailer.default_url_options = { host: 'movie-test-003-mib007.c9users.io' }
   config.action_mailer.default_url_options = { host: 'https://mobeeapp.herokuapp.com/' }
-  config.action_mailer.delivery_method = :letter_opener
+  #config.action_mailer.delivery_method = :letter_opener
   
 end

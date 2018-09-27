@@ -36,7 +36,7 @@ class MoviesController < ApplicationController
     @movie.user_id = current_user.id
     
     if @movie.save
-      ContactMailer.contact_mail(@movie).deliver
+      #ContactMailer.contact_mail(@movie).deliver
       redirect_to movies_path, notice: "完了！！！！！！！"
     else
       render :'new'
