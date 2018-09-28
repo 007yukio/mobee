@@ -5,6 +5,7 @@ body {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
+  text-align: center;
 }
 
 p, ol, ul, td {
@@ -54,15 +55,18 @@ div {
   padding: 2px;
   background-color: red;
   display: table;
+  margin-right: auto;
+  margin-left : auto;
+  
 }
 
 #error_explanation {
-  width: 450px;
-  border: 2px solid red;
-  padding: 7px 7px 0;
-  margin-bottom: 20px;
+  width: 500px;
+  padding: 7px 7px 7px;
   background-color: #f0f0f0;
-
+  margin-right: auto;
+  margin-left : auto;
+  
   h2 {
     text-align: left;
     font-weight: bold;
@@ -71,14 +75,21 @@ div {
     margin: -7px -7px 0;
     background-color: #c00;
     color: #fff;
+    text-align: center;
   }
 
   ul li {
     font-size: 12px;
     list-style: square;
+    text-align: center;
+    margin-right: auto;
+    margin-left : auto;
   }
 }
 
 label {
   display: block;
+  text-align: center;
+  margin-right: auto;
+  margin-left : auto;
 }

@@ -27,6 +27,10 @@ class MoviesController < ApplicationController
   # GET /movies/1/edit
   def edit
     @movie = Movie.find(params[:id])
+    if @movie.user_id != @current_user.id
+      flash[:notice] = "編集するが権限がありません"
+      redirect_to movies_path
+    end
   end
 
   # POST /movies

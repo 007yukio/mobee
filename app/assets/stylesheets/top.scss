@@ -31,8 +31,8 @@ background: #83ccd2;  /* fallback for old browsers */
     padding-top: 15%;
     font-size: 150px;
     font-family: "Pattaya";
-    
-  animation: 2s linear infinite blink_effect;
+    text-align: left;
+    animation: 2s linear infinite blink_effect;
 }
 @keyframes blink_effect {
     0% {
