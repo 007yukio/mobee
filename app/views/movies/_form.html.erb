@@ -6,10 +6,10 @@
 <%= form_with(model: movie, local: true) do |form| %>
   <% if movie.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(movie.errors.count, "error") %> prohibited this movie from being saved:</h2>
+      <h2><%= pluralize(movie.errors.count, "のエラー") %> があります。修正してください。</h2>
       <ul>
       <% movie.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+        <p><%= message %></p>
       <% end %>
       </ul>
     </div>
