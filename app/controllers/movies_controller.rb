@@ -13,6 +13,8 @@ class MoviesController < ApplicationController
   def show
     #@movie = Movie.find(params[:id])
     @favorite = current_user.favorites.find_by(movie_id: @movie.id)
+    @comments = @movie.comments
+    @comment = @movie.comments.build
   end
 
   # GET /movies/new
@@ -38,11 +40,15 @@ class MoviesController < ApplicationController
   def create
     @movie = Movie.new(movie_params)
     @movie.user_id = current_user.id
-    if @movie.save
-      #ContactMailer.contact_mail(@movie).deliver
-      redirect_to movies_path, notice: "完了！！！！！！！"
-    else
-      render :'new'
+    respond_to do |format|
+      if @movie.save
+        #ContactMailer.contact_mail(@movie).deliver
+        redirect_to movies_path, notice: "登録完了しました！"
+        format.js { render :index }
+      else
+        format.html { render :new }
+        format.js { render :index }
+      end
     end
   end
 

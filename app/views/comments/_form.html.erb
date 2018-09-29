@@ -1,8 +1,7 @@
-<%= form_with(model: comment, local: true) do |form| %>
+<%= form_with(model: [movie, comment]) do |form| %>
   <% if comment.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
-
       <ul>
       <% comment.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -10,23 +9,15 @@
       </ul>
     </div>
   <% end %>
-
   <div class="field">
-    <%= form.label :content %>
-    <%= form.text_area :content, id: :comment_content %>
+      <div class="field">
+    <%= form.label :ニックネーム %>
+    <%= form.text_area :writer %>    
+    <%= form.label :コメント %>
+    <%= form.text_area :content %>
   </div>
-<!--
-  <div class="field">
-    <#%= form.label :user_id %>
-    <3%= form.number_field :user_id, id: :comment_user_id %>
-  </div>
-
-  <div class="field">
-    <#%= form.label :movie_id %>
-    <#%= form.number_field :movie_id, id: :comment_movie_id %>
-  </div>
--->
   <div class="actions">
     <%= form.submit %>
   </div>
 <% end %>
+<!-- この記述がblogのshow画面に表示されるコメント入力欄になります -->

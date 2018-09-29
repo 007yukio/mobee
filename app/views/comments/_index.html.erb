@@ -1,0 +1,14 @@
+<div class="comments-box">
+<div class="box-title">コメント一覧</div>
+  <% comments.each do |comment| %>
+    <% if comment.id.present? %>
+        <div class="comments-s-box">
+            <p>コメントユーザ:　<%= comment.writer %></p>
+        </div>
+        <div>
+            <p>コメント:　<%= comment.content %></p>
+        </div>
+    <% end %>
+  <% end %>
+</div>
+</div>

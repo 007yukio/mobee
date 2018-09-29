@@ -1,3 +1,55 @@
 // Place all the styles related to the comments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.comments-box {
+    margin: 2em 0;
+    background: #f1f1f1;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.22);
+    font-family: "Pattaya";
+}
+.comments-box .box-title {
+    font-size: 1.2em;
+    background: #5fc2f5;
+    padding: 4px;
+    text-align: center;
+    color: #FFF;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+}
+.comments-box p {
+    padding: 20px 20px;
+    margin: 0;
+    font-family: "Pattaya";
+}
+
+.comments-s-box {
+    position: relative;
+    margin: 2em 0 2em 40px;
+    padding: 8px 15px;
+    background: #fff0c6;
+    border-radius: 30px;
+    
+}
+.comments-s-box:before{font-family: FontAwesome;
+    content: "\f111";
+    position: absolute;
+    font-size: 15px;
+    left: -40px;
+    bottom: 0;
+    color: #fff0c6;
+    font-family: "Pattaya";
+}
+.comments-s-box:after{
+    font-family: FontAwesome;
+    content: "\f111";
+    position: absolute;
+    font-size: 23px;
+    left: -23px;
+    bottom: 0;
+    color: #fff0c6;
+}
+.comments-s-box p {
+    margin: 0; 
+    padding: 0;
+    font-family: "Pattaya";
+}
