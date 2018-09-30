@@ -30,7 +30,7 @@ class MoviesController < ApplicationController
   def edit
     @movie = Movie.find(params[:id])
     if @movie.user_id != @current_user.id
-      flash[:notice] = "編集するが権限がありません"
+      flash[:notice] = "編集する権限がありません"
       redirect_to movies_path
     end
   end
