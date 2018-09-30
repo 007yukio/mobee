@@ -1,11 +1,13 @@
 class UsersController < ApplicationController
+  
   # GET /users/1
   # GET /users/1.json
   def show
     @user = User.find(params[:id])
-    if @user.user_id != @current_user.id
+    if @user.id != current_user.id
+    
       flash[:notice] = "編集するが権限がありません"
-      redirect_to movies_path
+      #redirect_to favorites_path
     end
   end
 
