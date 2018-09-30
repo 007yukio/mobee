@@ -6,7 +6,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     if @user.id != current_user.id
       flash[:notice] = "編集する権限がありません"
-      redirect_to favorites_path
+      redirect_to movies_path
     end
   end
 
